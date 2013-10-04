@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/lib/pickup/version'
 
 spec = Gem::Specification.new do |s|
 
-  s.name = 'pickup'
+  s.name = 'pickup_line'
   s.author = 'John Crepezzi'
   s.add_development_dependency('rspec')
   s.description = 'Parsing dates out of short form updates'
