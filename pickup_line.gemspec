@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/lib/pickup/version'
+require File.dirname(__FILE__) + '/lib/pickup_line/version'
 
 spec = Gem::Specification.new do |s|
 
@@ -13,6 +13,6 @@ spec = Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.summary = 'Always gets a date'
   s.test_files = Dir.glob('spec/*.rb')
-  s.version = Pickup::VERSION
+  s.version = PickupLine::VERSION
 
 end
