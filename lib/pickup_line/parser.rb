@@ -1,6 +1,6 @@
 require 'date'
 
-module Pickup
+module PickupLine
   class Parser
 
     def initialize(date)
