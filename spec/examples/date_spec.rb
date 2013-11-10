@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 # On a saturday in September
-thoughts 'simple pimple' do
+thoughts_on Date.new(2013, 9, 28) do
 
   # Full date
   think 'Happens on October 21st', Date.new(2013, 10, 21)
