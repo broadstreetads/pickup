@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pickup (0.0.1)
+    pickup_line (0.0.3)
 
 GEM
   remote: https://rubygems.org/
@@ -20,5 +20,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  pickup!
+  pickup_line!
   rspec
