@@ -20,6 +20,13 @@ module PickupLine
         month_num = Date::ABBR_MONTHNAMES.compact.map(&:downcase).index($1) + 1
         day = $2 ? $2.to_i : -1
         future_date day, month_num, @date.year
+      # (next) Day names
+      elsif str =~ /next\s+(#{Date::DAYNAMES.map(&:downcase).join('|')})/
+        dindex = Date::DAYNAMES.map(&:downcase).index $1
+        d = @date
+        d += 1 until d.wday == 0 # go to next week
+        d += 1 until d.wday == dindex
+        d
       # Day names
       elsif str =~ /(#{Date::DAYNAMES.map(&:downcase).join('|')})/
         dindex = Date::DAYNAMES.map(&:downcase).index $1

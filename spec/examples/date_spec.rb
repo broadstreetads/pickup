@@ -16,6 +16,10 @@ thoughts_on Date.new(2013, 9, 28) do
   think 'Christmas is Dec 25th', Date.new(2013, 12, 25)
   think 'Our favorite Nov. 13th is this year', Date.new(2013, 11, 13)
 
+  # Next full day name
+  think 'Be there next tuesday', Date.new(2013, 10, 1) # next tuesday is less than a week away
+  think 'Be there next Saturday', Date.new(2013, 9, 28) + 7 # not today
+
   # Full day name
   think 'Meat night is Friday night', Date.new(2013, 10, 4)
   think 'I love beer on Thursday', Date.new(2013, 10, 3)
