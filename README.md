@@ -15,6 +15,14 @@ is to be able to turn something like:
 "Let's eat a sandwich on Thursday" into a corresponding `Date` based on
 `Date.today`.
 
+## Usage
+
+``` ruby
+parser = PickupLine::Parser.new(Date.current)
+parser.locate "see you tomorrow" # Date.current + 1
+parser.locate "see you next tuesday" # ya know
+```
+
 ## Issues?
 
 Use the GitHub issue tracker
