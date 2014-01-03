@@ -10,13 +10,12 @@ module PickupLine
     def locate(str)
       str = str.downcase
       words = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
-      # Full month names
-      if str =~ /(#{Date::MONTHNAMES.compact.map(&:downcase).join('|')})(\s+\d+)?/
+      # Full month names with date
+      if str =~ /(#{Date::MONTHNAMES.compact.map(&:downcase).join('|')})\s+(\d{1,2})(?!\d)/
         month_num = Date::MONTHNAMES.compact.map(&:downcase).index($1) + 1
-        day = $2 ? $2.to_i : -1
-        future_date day, month_num, @date.year
-      # Abbreviated month names
-      elsif str =~ /(#{Date::ABBR_MONTHNAMES.compact.map(&:downcase).join('|')})\.?(\s+\d+)?/
+        future_date $2.to_i, month_num, @date.year
+      # Abbreviated month names with date
+      elsif str =~ /(#{Date::ABBR_MONTHNAMES.compact.map(&:downcase).join('|')})\.?\s+(\d{1,2})(?!\d)/
         month_num = Date::ABBR_MONTHNAMES.compact.map(&:downcase).index($1) + 1
         day = $2 ? $2.to_i : -1
         future_date day, month_num, @date.year
@@ -34,7 +33,7 @@ module PickupLine
         d += 1 until d.wday == dindex
         d
       # In N days
-      elsif str =~ /in\s+(\d+)\s+days?/
+      elsif str =~ /in\s+(\d)\s+days?/
         @date + $1.to_i
       # In N days (with words)
       elsif str =~ /in\s+(#{words.join('|')})\s+days?/

@@ -10,7 +10,11 @@ thoughts_on Date.new(2013, 9, 28) do
   think 'On September 30th - tasty food!', Date.new(2013, 9, 30)
   think 'April 15 is the best day', Date.new(2014, 4, 15)
   think 'november 12th is the day', Date.new(2013, 11, 12)
-  think 'November is a month I like', Date.new(2013, 11, -1)
+  think 'November is a month I like', nil
+
+  # Date with year
+  think 'Live a Little! - January 2014', nil
+  think 'Live a Little! - Jan. 2014', nil
 
   # Abbreviated Dates (with and without punctuation)
   think 'Christmas is Dec 25th', Date.new(2013, 12, 25)
